@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Barcode-Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Barcode-Project</h1>
+<h2>Angaben</h2>
+<form action="#" th:action="@{/barcode}" th:object="${barcode}" method="post">
+    <p>Vorname: <input type="text" th:field="*{name}"/></p>
+    <p>Nachname: <input type="text" th:field="*{nachname}"/></p>
+    <p>Sitzreihe: <input type="text" th:field="*{sitzreihe}"/></p>
+    <p>Saal: <input type="text" th:field="*{saal}"/></p>
+    <p>Film: <input type="text" th:field="*{film}"/></p>
+    <p>Uhrzeit: <input type="text" th:field="*{zeit}"/></p>
+    <p><input type="submit" value="Submit"/></p>
+
+
+</form>
+<div style="position:relative; top:2px;">
+    <h2>Codierter Code</h2>
+    <p th:text="${barcode.values}"></p>
+</div>
+
+<form action="#" th:action="@{/barcode}" th:object="${barcode}" method="post">
+    <p>Barcode: <input type="text" th:field="*{barcode}"/></p>
+    <p><input type="submit" value="Submit"/></p>
+
+</form>
+
+<p></p>
+<p></p>
+<p></p>
+
+<div th:if="${barcode.decode().length > 0 }">
+    <p th:text=" ${ 'Vorname: ' + barcode.decode()[0]}"></p>
+    <p th:text=" ${ 'Nachname: ' + barcode.decode()[1]}"></p>
+    <p th:text="${'Sitzreihe: ' + barcode.decode()[2]}"></p>
+    <p th:text="${'Saal: ' +barcode.decode()[3]}"></p>
+    <p th:text="${'Film: ' +barcode.decode()[4]}"></p>
+    <p th:text="${'Uhrzeit: ' +barcode.decode()[5]}"></p>
+
+
+</div>
+<form>
+    <h2>Barcode Scanner</h2>
+    <p><input type="text"/></p>
+</form>
+
+</body>
+</html>

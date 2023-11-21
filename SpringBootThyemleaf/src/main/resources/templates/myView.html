@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MyView</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>MyView</h1>
+<form action="#" th:action="@{/myView}" th:object="${myModel}" method="post">
+    <p>Text: <input type="text" th:field="*{content}"/></p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+</body>
+</html>

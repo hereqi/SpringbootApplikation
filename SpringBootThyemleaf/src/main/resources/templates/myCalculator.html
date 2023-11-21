@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calculatoooor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>BMI-Calculator</h1>
+<form action="#" th:action="@{/myCalculator}" th:object="${myCalculator}" method="post">
+    <p>Height: <input type="text" th:field="*{height}"/></p>
+    <p>Weight: <input type="text" th:field="*{weight}"/></p>
+    <p><input type="submit" value="Submit"/></p>
+    <p th:text="${myCalculator.value}"></p>
+
+</form>
+
+
+</body>
+</html>

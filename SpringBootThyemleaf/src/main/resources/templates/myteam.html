@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Team</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>My Team:</h1>
+<p th:each="player : ${myteam}">
+<li>
+    <span th:text="${player.getName()}"> </span>
+</li>
+<li>
+    <span th:text="${player.getAge()}"> </span>
+</li>
+<li>
+    <span th:text="${player.getGebDate()}"> </span>
+</li>
+<li>
+    <span th:text="${player.getClub()}"> </span>
+</li>
+<li>
+    <span th:text="${player.getNumber()}"> </span>
+</li>
+<li>
+    <span th:text="${player.getHight()}"> </span>
+</li>
+<li>
+    <span th:text="${player.getValue()}"> </span>
+</li>
+<li>
+    <span th:text="${player.getNationaliti()}"> </span>
+</li>
+
+<img th:src="${player.getBildUrl()}" height="150px" width="150px"> </img>
+
+</p>
+
+</body>
+</html>
